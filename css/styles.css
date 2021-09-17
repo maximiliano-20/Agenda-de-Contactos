@@ -1,0 +1,135 @@
+*{
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+.header{
+    background-color: #9c27b0;
+	padding: 20px 0px;
+	
+}
+
+.menu{
+	width: 90%;
+	margin: 0px auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.logo p{
+	color: #fff;
+	font-size: 2rem;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	letter-spacing: 1px;
+}
+
+.menu-link{
+	display: flex;
+	align-items: center;
+}
+
+.menu-link{
+	list-style: none;
+	color: #fff;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	letter-spacing: 1px;
+}
+
+.fa-bars{
+	color: #fff;
+}
+
+.formulario-contenedor{
+	width: 95%;
+	margin: 20px auto;
+
+	
+}
+
+.formulario{
+	min-height: 30vh;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border: 1px solid #ccc;
+}
+
+
+
+.input-caja label{
+	display: block;
+	margin-bottom: 10px;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	
+}
+
+
+.input-caja input{
+	width: 100%;
+	outline: none;
+	border: none;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px 20px;
+
+}
+
+.boton-caja{
+    
+	margin-top: 25px;
+}
+
+
+
+
+
+
+input[type="submit"]{
+	width: 100%;
+	border-radius: 5px;
+	padding: 10px 35px;
+	border: none;
+	outline: none;
+	background-color: #9c27b0;
+	color: #fff;
+	transition: opacity 0.5s ease;
+}
+
+
+input[type="submit"]:hover{
+	opacity: 0.80;
+	cursor: pointer;
+}
+
+
+
+.tabla-container{
+	width: 100%;
+	margin: 30px 0px;
+	background-color: #9c27b0;
+	overflow-x: auto;
+}
+
+.tabla{
+	width: 100%;
+	padding: 15px 0px;
+}
+
+th{
+	color: #fff;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-size: 0.8rem;
+}
+
+
