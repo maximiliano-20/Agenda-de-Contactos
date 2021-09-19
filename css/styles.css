@@ -1,14 +1,16 @@
+
+
+:root{
+	--colorMorado : #9c27b0;
+	--colorBlanco : #fff;
+	--fuente: sans-serif;
+}
+
 *{
 	box-sizing: border-box;
 	margin: 0px;
 	padding: 0px;
 }
-
-:root{
-	--colorMorado : #9c27b0;
-	--colorBlanco : #fff;
-}
-
 
 
 .header{
@@ -29,7 +31,7 @@
 	color: var(--colorBlanco);
 	font-size: 2rem;
 	text-transform: uppercase;
-	font-family: sans-serif;
+	font-family: var(--fuente);
 	letter-spacing: 1px;
 }
 
@@ -72,7 +74,7 @@
 .input-caja label{
 	display: block;
 	margin-bottom: 10px;
-	font-family: sans-serif;
+	font-family: var(--fuente);
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	
@@ -129,11 +131,53 @@ input[type="submit"]:hover{
 	padding: 15px 0px;
 }
 
-th{
+th{ 
+	padding: 7px 0px;
 	color: var(--colorBlanco);
 	text-transform: uppercase;
-	font-family: sans-serif;
+	font-family: var(--fuente);
 	font-size: 0.8rem;
 }
 
+tbody{
+	width: 80%;
+	text-align: center;
+
+}
+
+td{
+	padding: 15px 5px;
+	margin: 10px 0px;
+	color: var(--colorMorado);
+	background-color:  var(--colorBlanco);
+	font-family: var(--fuente);
+
+
+}
+
+.boton{
+	padding: 8px 15px;
+	border-radius: 5px;
+	text-decoration: none;
+	border: none;
+	outline: none;
+	font-family: var(--fuente);
+	font-size: 0.9rem;
+	transition: opacity 0.5s ease;
+}
+
+.boton:hover{
+	opacity: 0.80;
+	cursor: pointer;
+}
+
+.editar{
+	background-color: green;
+	color: var(--colorBlanco);
+}
+
+.eliminar{
+	background-color: red;
+	color: var(--colorBlanco);
+}
 
