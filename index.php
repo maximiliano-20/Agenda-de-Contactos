@@ -3,13 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>Agenda de Contactos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
 
 
 
-<header>sjsj</header>
 <header class="header">
 
 	<nav class="menu">
@@ -34,7 +34,7 @@
 
 	<div class="formulario-contenedor">
 		
-		<form id="formulario" class="formulario"  method="POST"  action="php/agregar-contacto.php">
+		<form id="formulario" class="formulario"  method="POST" action="php/agregar-contacto.php">
 			
 			<div class="input-caja">
 				<label>Nombre</label>
@@ -71,13 +71,18 @@
   		<th class="tablas-item">Telefono</th>
   		<th class="tablas-item">Acciones</th>
   	  </thead>
+      
 
+      <tbody id="contacto-html">
+      	 
+
+      </tbody>
 
   	</table>
   	
   </div>
 
 	
-
+<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
