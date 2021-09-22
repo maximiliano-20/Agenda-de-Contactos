@@ -100,7 +100,7 @@
 
 
 
-input[type="submit"]{
+.enviar[type="submit"]{
 	width: 100%;
 	border-radius: 5px;
 	padding: 10px 35px;
@@ -112,7 +112,7 @@ input[type="submit"]{
 }
 
 
-input[type="submit"]:hover{
+.enviar[type="submit"]:hover{
 	opacity: 0.80;
 	cursor: pointer;
 }
@@ -120,8 +120,8 @@ input[type="submit"]:hover{
 
 
 .tabla-container{
-	width: 100%;
-	margin: 30px 0px;
+	width: 95%;
+	margin: 30px auto;
 	background-color: var(--colorMorado);
 	overflow-x: auto;
 }
