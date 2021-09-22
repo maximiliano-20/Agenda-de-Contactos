@@ -34,7 +34,9 @@
 
 	<div class="formulario-contenedor">
 		
-		<form id="formulario" class="formulario"  method="POST" action="php/agregar-contacto.php">
+		<form id="formulario" class="formulario"  method="POST">
+
+		   <input type="hidden" name="id" id="id">
 			
 			<div class="input-caja">
 				<label>Nombre</label>
@@ -51,13 +53,14 @@
 				<input type="text" name="telefono" id="telefono" placeholder="Ingrese un telefono">
 			</div>
 
-		<div class="boton-caja"> 
-				<input type="submit" value="Agregar">
+		     <div class="boton-caja"> 
+				<button type="submit" class="enviar" id="enviar">Agregar</button>
+			</div>
+
  		</form>
 
-	</div>
+	</div> 
 	
-
 
    
 
