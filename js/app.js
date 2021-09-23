@@ -28,11 +28,23 @@ async function agregarContacto (e) {
 
     if (nombreInput === '' || apellidoInput === '' || 
     	telefonoInput === '') {
-      	alert('Rellena los campos');
+
+      	 Swal.fire({
+        	icon : 'error',
+        	title : 'Campos Vacios',
+        	text : 'Debes rellenar todos los campos'
+        });
+
         return;
 
     }else if (!isNaN(nombreInput)  || !isNaN(apellidoInput)) {
-    	alert('El nombre y apellido debe ser caracteres');
+
+    	 Swal.fire({
+        	icon : 'error',
+        	title : 'Caracteres no Validos',
+        	text : 'El nombre y apellido deben ser caracteres'
+        });
+
     	return;
     } 
     
@@ -61,7 +73,13 @@ async function guardarContacto () {
         });
 
         const respuesta = await resultado.json();
-        alert('Contacto Guardado Correctamente');
+
+         Swal.fire({
+        	icon : 'success',
+        	title : 'Correcto',
+        	text : 'Contacto Agregado Correctamente'
+        });
+
         formulario.reset();
         mostrarContactos();
 
@@ -115,12 +133,35 @@ function traerContactos (resultado) {
 
 function confirmarContacto (e) {
 	if (e.target.classList.contains('eliminar') ) {
-		
-		if (confirm('¿Estas seguro de eliminar el contacto?') ) {
 
-			const idContacto = parseInt (e.target.dataset.id);
-			eliminarContacto(idContacto);
-		}
+		Swal.fire({
+			title : 'Estas Seguro de eliminar el contacto',
+			text : 'No podras revertir los cambios',
+			icon : 'warning',
+			showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si Eliminar!'
+
+		}).then((result) => {
+		
+
+          if (result.isConfirmed) {
+
+          	const idContacto = parseInt (e.target.dataset.id);
+		    eliminarContacto(idContacto);
+
+             Swal.fire(
+            'Eliminado!',
+            'El contacto se elimino correctamente',
+            'success'
+
+           )
+
+         }
+
+      });
+		
 	}
 }
 
@@ -138,7 +179,7 @@ async function eliminarContacto (id) {
 	});
 
 	const resultado = await respuesta.json();
-	alert('Contacto Eliminado Correctamente');
+	
 	mostrarContactos();
 
 	} catch(e) {
@@ -193,10 +234,19 @@ async function actualizarContacto () {
         });
 
         const respuesta = await resultado.json();
-        alert('Contacto Actualizado Correctamente');
+
+        Swal.fire({
+        	icon : 'success',
+        	title : 'Correcto',
+        	text : 'Contacto Actualizado Correctamente'
+        });
+
         mostrarContactos();
 
 	} catch(e) {
 		console.log(e);
 	}
 }
+
+
+
