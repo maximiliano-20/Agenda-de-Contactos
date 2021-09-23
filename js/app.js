@@ -3,12 +3,18 @@ const formulario = document.querySelector('#formulario');
 const contactosHTML  = document.querySelector('#contacto-html');
 const mensajeAlerta = document.querySelector('#mensaje-alerta');
 const btnEnviar = document.querySelector('#enviar');
+const numeroContactos = document.querySelector('#cantidad-contactos');
 let editando;
 
+ 
 
 
 // Eventos
-document.addEventListener('DOMContentLoaded', mostrarContactos);
+document.addEventListener('DOMContentLoaded', () =>{
+    mostrarContactos();
+    contarContactos();
+});
+
 formulario.addEventListener('submit', agregarContacto);
 contactosHTML.addEventListener('click', confirmarContacto);
 contactosHTML.addEventListener('click', editarContacto);
@@ -17,7 +23,7 @@ contactosHTML.addEventListener('click', editarContacto);
 
 
 // Funciones
-async function agregarContacto (e) {
+function agregarContacto (e) {
 	e.preventDefault();
     
     const nombreInput = document.querySelector('#nombre').value;
@@ -64,6 +70,7 @@ async function agregarContacto (e) {
 
 
 async function guardarContacto () {
+
 	try {
 		const url = 'php/agregar-contacto.php';
 		const datos = new FormData(formulario);
@@ -99,7 +106,9 @@ async function mostrarContactos () {
 	try {
 		const respuesta = await fetch(url);
 		const resultado = await respuesta.json();
+    contarContactos();
 		traerContactos(resultado);
+
 	} catch(e) {
 		console.log(e);
 	}
@@ -210,7 +219,7 @@ async function editarContacto (e) {
         	
         	const { id , nombre , apellido , telefono } = contacto;
 
-            document.querySelector('#id').value = id;
+          document.querySelector('#id').value = id;
         	document.querySelector('#nombre').value = nombre;
         	document.querySelector('#apellido').value = apellido;
         	document.querySelector('#telefono').value = telefono;
@@ -250,3 +259,17 @@ async function actualizarContacto () {
 
 
 
+
+async function contarContactos () {
+   
+   try {
+     const url = 'php/contar-contactos.php';
+     const respuesta = await fetch(url);
+     const resultado = await respuesta.json();
+     const totalContactos = parseInt ( resultado[0][0] );
+     numeroContactos.textContent = `Contactos : ${totalContactos}`;
+
+   } catch(e) {
+     console.log(e);
+   }
+}
