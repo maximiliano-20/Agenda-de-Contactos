@@ -12,6 +12,11 @@
 	padding: 0px;
 }
 
+html,
+body{
+	width: 100%;
+	overflow-x: hidden;
+}
 
 .header{
     background-color: var(--colorMorado);
@@ -35,12 +40,11 @@
 	letter-spacing: 1px;
 }
 
+
+
 .menu-link{
 	display: flex;
 	align-items: center;
-}
-
-.menu-link{
 	list-style: none;
 	color: var(--colorBlanco);
 	font-size: 1.2rem;
@@ -100,7 +104,7 @@
 
 
 
-.enviar[type="submit"]{
+.enviar{
 	width: 100%;
 	border-radius: 5px;
 	padding: 10px 35px;
@@ -112,7 +116,7 @@
 }
 
 
-.enviar[type="submit"]:hover{
+.enviar{
 	opacity: 0.80;
 	cursor: pointer;
 }
@@ -181,3 +185,80 @@ td{
 	color: var(--colorBlanco);
 }
 
+/* RESPONSIVE */
+
+@media(max-width:824px ){
+
+	.logo p{
+	    font-size: 1.5rem;
+	}
+    
+    .menu-link{
+    	font-size: 1rem;
+
+    }
+
+	.formulario{
+      flex-direction: column;
+      height: 330px;
+
+      
+	}
+
+	.input-caja label{
+		margin-bottom: 0px;
+		
+	}
+
+	.input-caja input{
+		padding: 10px 60px;
+	}
+
+	.boton-caja{
+		margin-top: 7px;
+	}
+
+	.boton-caja .enviar{
+		padding: 10px 116px;
+		font-size: 1rem;
+	}
+	
+
+    .tabla{
+    	padding: 25px 0px;
+    }
+    
+    td{
+    	padding: 20px 5px;
+    }
+}
+
+
+@media(max-width: 485px){
+	
+
+	.logo p{
+        font-size: 1.2rem;
+	}
+
+	.menu-link{
+		font-size: 0.6rem;
+	}
+
+	.input-caja input{
+		padding: 10px 30px;
+	}
+
+	.boton{
+		display: block;
+		margin-bottom: 10px;
+	}
+
+
+	.boton-caja .enviar{
+		padding: 10px 80px;
+		font-size: 1rem;
+	}
+
+
+}
